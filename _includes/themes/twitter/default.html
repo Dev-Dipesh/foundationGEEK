@@ -58,33 +58,171 @@
   </head>
 
   <body>
-    <div class="navbar">
-      <div class="navbar-inner">
-        <div class="container-narrow">
-          <a class="brand" href="{{ HOME_PATH }}">{{ site.title }}</a>
-          <ul class="nav">
-            {% assign pages_list = site.pages %}
-            {% assign group = 'navigation' %}
-            {% include JB/pages_list %}
-          </ul>
+    <div class="row">
+
+ 
+    <!-- Navigation -->
+      <nav  id="menu" class="nav">  
+  <ul>
+    <li>
+      <a  href="#" title="" class="active">
+        <span  class="icon"> <i aria-hidden="true"  class="icon-home"></i></span><span>Home</span>
+      </a>
+    </li>
+    <li>    
+      <a href="#" title=""><span class="icon"> <i aria-hidden="true" class="icon-tag-fill"></i></span><span>Tags</span></a> 
+    </li> 
+    <li>
+      <a  href="#" title=""><span  class="icon"><i  aria-hidden="true" class="icon-css3"></i></span><span>CSS3 Hacks</span></a>
+    </li>
+    <li>
+      <a  href="#" title=""><span  class="icon"><i  aria-hidden="true" class="icon-monitor"></i></span><span>Themes</span></a> 
+    </li>
+    <li>
+      <a  href="#" title=""><span  class="icon"><i  aria-hidden="true" class="icon-grid"></i></span><span>Logos</span></a>  
+    </li>
+    <li>
+      <a  href="test.html" title=""><span  class="icon"><i  aria-hidden="true" class="icon-info"></i></span><span>About</span></a>
+    </li>
+  </ul>
+</nav>
+</div> 
+    <!-- End Navigation -->
+<div class="row">
+  <nav class="top-bar">
+  <ul class="title-area">
+    <!-- Title Area -->
+    
+    <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+    <li class="toggle-topbar"><a href="#"><span>Menu</span></a></li>
+  </ul>
+
+  <section class="top-bar-section">
+    <!-- Left Nav Section -->
+
+
+    <ul class="left">
+      <li class="divider"></li>
+      <li class="has-dropdown"><a href="#">Foundation GEEK </a>
+
+        <ul class="dropdown inset"  id="menu_drop">
+        <br />
+        <li><h4><strong><span id="welcome">Welcome!</span></strong></h4></li>
+        <li class="divider"></li>
+        <li>
+        <p>Foundation GEEK is an element gallery for web designers and web developers, anybody who is using  Foundation will find this website essential in their craft.
+Currently Foundation GEEK is using Foundation Framework v 4.3.0</p>
+        </li>
+        </ul>
+      </li>    
+      <li class="divider"></li>
+    </ul>
+
+
+    <!-- Right Nav Section -->
+    
+    <ul class="right">
+    <li>
+    <a href=""><i class="icon-equalizer-5 fs1"></i></a>
+    </li>
+    </ul>
+  </section>
+</nav>
+</div>
+  <!-- End Header and Nav -->
+
+<!-- Banner -->
+<div class="row">
+<div class="jumbotron masthead gradient">
+  <div class="container">
+    <h1> Foundation GEEK</h1>
+    <p> Design elements and code snippets for <a href="http://foundation.zurb.com/" target="_blank"> Foundation</a> HTML/CSS/JS framework </p>
+  </div>
+</div> 
+</div>
+<br />
+<!-- End of Banner -->
+  <div>
+  <div class="row">
+<div class="large-12 columns my_container">
+  <div class="align_div">
+  <div class="row">
+  <div class="has-form sb-search" id="sb-search">
+  <form>
+      <input class="sb-search-input" list="options" placeholder="eg. sign up form..." type="text" value="" name="search" id="search">
+      <datalist id="options">
+        <option>Navbar</option>
+        <option>Headers</option>
+        <option>Sign Up Form</option>
+      </datalist>
+      <input class="sb-search-submit" type="submit" value="">
+      <span class="sb-icon-search"></span>
+  </form>
+</div>
+</div>
+<br />
+<br />
+
+
+    {{ content }}
+</div>
+  </div>
+    </div>
+</div>
+  
+      <hr>
+      <!-- Footer -->
+
+<div id="newsletter">
+    <div class="row">
+      <div class="small-4 large-8 columns">
+        <h5>Stay on top of what's happening on <a href="http://foundationGeek.com">Foundation GEEK</a> with <a href="http://foundation.zurb.com/">Foundation</a>.</h5>
+        <p>Subscribe to our monthly mailing list to receive latest updates from <a href="http://foundationGeek.com">Foundation GEEK</a>.</p>
+      </div>
+
+      <div class="small-4 large-4 columns">
+        <div class="row collapse">
+          <!--###################################################################################################################################################################################################################################################################################################################################################################################################-->
+                      <!-- Begin MailChimp Signup Form -->
+          <div>
+          <form action="http://facebook.us7.list-manage1.com/subscribe/post?u=b09c8d2070c2bb605ba986713&amp;id=2402fd0ecd" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+              
+              <input type="text" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+              <div class="clear"><input type="submit" value="Subscribe Newsletter" name="subscribe" id="mc-embedded-subscribe" class="postfix small button expand"></div>
+          </form>
+          </div>
+
+                        <!--End mc_embed_signup-->          
+        
+          <!--##################################################################################################################################################################################################################################################################################################################################################################################################-->
         </div>
       </div>
     </div>
+  </div>
 
-    <div class="container-narrow">
-
-      <div class="content">
-        {{ content }}
-      </div>
-      <hr>
-      <footer>
-        <p>&copy; {{ site.time | date: '%Y' }} {{ site.author.name }}
-          with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
-          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
-        </p>
-      </footer>
-
+<div class="zurb-footer-bottom">
+  <div class="row">
+    <div class="small-8 large-8 columns">
+        <a href="http://foundationGeek.com" class=".inset" id="welcome">Foundation GEEK</a>
+        <ul class="zurb-links">
+          <li><a href="http://foundationGeek.com/about">About</a></li>
+          <li><a href="http://foundationGeek.com/tags">Tags</a></li>
+          <li><a href="http://foundationGeek.com/css3hacks">CSS-3 Hacks</a></li>
+          <li><a href="http://foundationGeek.com/themes">Themes</a></li>
+          <li><a href="http://foundationGeek.com/logos">Logos</a></li>
+       </ul>
+       <p class="copyright">2013 Foundation GEEK was crafted by <a href="http://in.linkedin.com/in/devdipesh/">Dipesh Bhardwaj</a>.</p>
     </div>
+    <div class="small-4 large-4 columns">
+      <ul class="home-social">
+          <li><a href="http://www.twitter.com/FoundationGEEK" class="twitter"></a></li>
+          <li><a href="https://www.facebook.com/FoundationGEEK" class="facebook"></a></li>
+          <li><a href="http://foundationGeek.com/contact" class="mail"></a></li>
+        </ul>
+     </div>
+               
+  </div>
+</div>
 
   <!-- End Footer -->
 
