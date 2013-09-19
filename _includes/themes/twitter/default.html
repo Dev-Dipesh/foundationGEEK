@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Foundation GEEK</title>
+    {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
+    <meta name="author" content="{{ site.author.name }}">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="{{ ASSET_PATH }}/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+
+    <!-- Le fav and touch icons -->
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+
+    <link rel="stylesheet" href="{{ ASSET_PATH }}/bootstrap/css/foundation.css" />
+  <link rel="stylesheet" type="text/css" href="{{ ASSET_PATH }}/bootstrap/css/custom.css" />
+  <link rel="stylesheet" type="text/css" href="{{ ASSET_PATH }}/style.css" />
+  <link href="http://cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">  
+
+  <script src="{{ ASSET_PATH }}/bootstrap/js/vendor/custom.modernizr.js"></script>
+
+<script type="text/javascript">
+//<![CDATA[
+  (function() {
+    var shr = document.createElement('script');
+    shr.setAttribute('data-cfasync', 'false');
+    shr.src = '//dsms0mj1bbhn4.cloudfront.net/assets/pub/shareaholic.js';
+    shr.type = 'text/javascript'; shr.async = 'true';
+    shr.onload = shr.onreadystatechange = function() {
+      var rs = this.readyState;
+      if (rs && rs != 'complete' && rs != 'loaded') return;
+      var apikey = 'd9e5ca4642a37f591e699b26390ddd48'
+      try { Shareaholic.init(apikey); } catch (e) {}
+    };
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(shr, s);
+  })();
+//]]>
+</script>
+
+    <!-- atom & rss feed -->
+    <link href="{{ BASE_PATH }}{{ site.JB.atom_path }}" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="{{ BASE_PATH }}{{ site.JB.rss_path }}" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+
+  </head>
+
+  <body>
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container-narrow">
+          <a class="brand" href="{{ HOME_PATH }}">{{ site.title }}</a>
+          <ul class="nav">
+            {% assign pages_list = site.pages %}
+            {% assign group = 'navigation' %}
+            {% include JB/pages_list %}
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-narrow">
+
+      <div class="content">
+        {{ content }}
+      </div>
+      <hr>
+      <footer>
+        <p>&copy; {{ site.time | date: '%Y' }} {{ site.author.name }}
+          with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+        </p>
+      </footer>
+
+    </div>
+
+  <!-- End Footer -->
+
+    <script>
+  document.write('<script src=' +
+  ('__proto__' in {} ? '{{ ASSET_PATH }}/bootstrap/js/vendor/zepto' : '{{ ASSET_PATH }}/bootstrap/js/vendor/jquery') +
+  '.js><\/script>')
+  </script>
+  
+  <script src="{{ ASSET_PATH }}/bootstrap/js/foundation.min.js"></script>
+  <!--
+  
+  <script src="js/foundation/foundation.js"></script>
+  
+  <script src="js/foundation/foundation.alerts.js"></script>
+  
+  <script src="js/foundation/foundation.clearing.js"></script>
+  
+  <script src="js/foundation/foundation.cookie.js"></script>
+  
+  <script src="js/foundation/foundation.dropdown.js"></script>
+  
+  <script src="js/foundation/foundation.forms.js"></script>
+  
+  <script src="js/foundation/foundation.joyride.js"></script>
+  
+  <script src="js/foundation/foundation.magellan.js"></script>
+  
+  <script src="js/foundation/foundation.orbit.js"></script>
+  
+  <script src="js/foundation/foundation.reveal.js"></script>
+  
+  <script src="js/foundation/foundation.section.js"></script>
+  
+  <script src="js/foundation/foundation.tooltips.js"></script>
+  
+  <script src="js/foundation/foundation.topbar.js"></script>
+  
+  <script src="js/foundation/foundation.interchange.js"></script>
+  
+  <script src="js/foundation/foundation.placeholder.js"></script>
+  
+  <script src="js/foundation/foundation.abide.js"></script>
+  
+  -->
+  <script>
+      //  The function to change the class
+      var changeClass = function (r,className1,className2) {
+        var regex = new RegExp("(?:^|\\s+)" + className1 + "(?:\\s+|$)");
+        if( regex.test(r.className) ) {
+          r.className = r.className.replace(regex,' '+className2+' ');
+          }
+          else{
+          r.className = r.className.replace(new RegExp("(?:^|\\s+)" + className2 + "(?:\\s+|$)"),' '+className1+' ');
+          }
+          return r.className;
+      };  
+
+      //  Creating our button in JS for smaller screens
+      var menuElements = document.getElementById('menu');
+      menuElements.insertAdjacentHTML('afterBegin','<button type="button" id="menutoggle" class="navtoogle" aria-hidden="true"><i aria-hidden="true" class="icon-menu"> </i> Menu</button>');
+
+      //  Toggle the class on click to show / hide the menu
+      document.getElementById('menutoggle').onclick = function() {
+        changeClass(this, 'navtoogle active', 'navtoogle');
+      }
+    </script>
+
+  <script src="{{ ASSET_PATH }}/bootstrap/js/classie.js"></script>
+    <script src="{{ ASSET_PATH }}/bootstrap/js/uisearch.js"></script>
+    <script>
+      new UISearch( document.getElementById( 'sb-search' ) );
+    </script>
+  <script>
+    $(document).foundation();
+  </script>
+
+      <script src="{{ ASSET_PATH }}/bootstrap/js/src-min/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+        var editor = ace.edit("editor");
+        editor.setTheme("ace/theme/twilight");
+        editor.getSession().setMode("ace/mode/html");
+        editor.setReadOnly(true);
+        editor.setHighlightActiveLine(true);
+        editor.setShowPrintMargin(true);
+        editor.getSession().setUseSoftTabs(true);
+    </script>
+
+<script>
+  $("#activate").click(function(){
+      editor.setReadOnly(false);
+      editor.setTheme("ace/theme/twilight");
+       editor.on('change', function() {
+         //var edit_data = editor.getValue();
+         //document.getElementById("preview").innerHTML = edit_data; 
+         $('#preview').html(editor.getValue());
+       });
+
+      });
+      return true;
+</script>
+
+<script>
+  var editor = ace.edit("editor");
+  $("#copy").click(function(){
+          if($('.prettyprint').is(':visible')) {
+                SelectText('copybody');
+          } else  {
+            editor.focus();
+            editor.selectAll(editor);
+      }
+        });
+</script>
+
+
+    {% include JB/analytics %}
+  </body>
+</html>
